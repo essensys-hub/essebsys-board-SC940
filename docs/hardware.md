@@ -15,6 +15,12 @@ The project includes several schematic sheets:
 
 The PCB layout is defined in `SI940D.PcbDoc`.
 
+## PDF Documentation
+
+- [Schematic PDF (SC942-0B)](assets/pdfs/Schematic%20PDF_SC942-0B.pdf)
+- [Assembly Drawings (SC942-0B)](assets/pdfs/Assembly%20Drawings_SC942-0B.pdf)
+- [Controller Datasheet (41250f)](assets/pdfs/41250f.pdf)
+
 ## Manufacturing
 
 Manufacturing files can be found in `SC940D/Gerbers` and `SC940D/Assembly`.
