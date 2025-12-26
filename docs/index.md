@@ -7,6 +7,15 @@ La carte SC940D est une unité de contrôle centrale conçue pour l'automatisati
 
 Ce projet est Open Source Hardware. Vous trouverez ici toutes les informations nécessaires pour comprendre, fabriquer, réparer et intégrer cette carte.
 
+## Aperçu du schéma
+Pour vous donner un aperçu rapide, voici les éléments clés du circuit (Microcontrôleur et Connecteurs) :
+
+![Microcontrôleur (Page 2)](assets/images/schematic_p2.png)
+*Figure 1: Schéma du cœur numérique (Microcontrôleur)*
+
+![Connecteurs (Page 8)](assets/images/schematic_p8.png)
+*Figure 2: Schéma des connecteurs et interfaces*
+
 ## Contenu de la documentation
 
 ### :classical_building: Architecture

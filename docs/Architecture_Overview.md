@@ -13,6 +13,8 @@ The **SC940D** is a central control unit ("Boitier Pièce de Vie") designed for 
 -   **Role**: Handles local logic, relay control signals, and interfaces with the communication module. 
     -   *Note*: The PIC16F946 is an LCD-driver capable MCU, suggesting it might have been chosen for high pin count (64 pins) rather than LCD features, or legacy reasons.
 
+![MCU Schematic Detail](assets/images/schematic_p2.png)
+
 ### Communication Module ("Coeur")
 -   **Component**: **SC943-0C** (Custom Module).
 -   **Footprint**: `SI943C_REV_A`.
