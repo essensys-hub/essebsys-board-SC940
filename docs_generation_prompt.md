@@ -40,10 +40,25 @@ Mon objectif est de créer un site statique **MkDocs** (thème Material) pour pe
         *   🏭 Fichiers de Fabrication (Gerbers ZIP)
     *   `hardware.md` et `architecture.md`: Crée les fichiers squelettes.
 
-4.  **Configuration (`mkdocs.yml`)**
+4.  **Documentation Firmware (`docs/firmware.md`)**
+    *   Si un dossier de code source est présent (ex: `Prog/source`), analyse :
+        *   `main.c`: Point d'entrée et gestion EEPROM.
+        *   `hard.h` / `hard.c`: Mapping des Entrées/Sorties (Table de référence statique).
+        *   `slavenode.c`: Protocole de communication.
+    *   Crée `firmware.md` décrivant :
+        *   L'environnement de build (Compilateur, MCU).
+        *   La structure du projet.
+        *   Le mapping mémoire (EEPROM).
+        *   Le fonctionnement du mapping I/O (Hard Coded via macros).
+
+5.  **Configuration (`mkdocs.yml`)**
     *   Génère le fichier `mkdocs.yml` complet configuré avec le thème `material` et la structure de navigation correspondante.
 
-5.  **Règles Importantes**
+6.  **Pipeline CI/CD (`.github/workflows/publish.yml`)**
+    *   Crée un workflow GitHub Actions pour déployer la documentation sur GitHub Pages.
+    *   Utilise `actions/setup-python`, installe `mkdocs-material` et lance `mkdocs gh-deploy --force`.
+
+7.  **Règles Importantes**
     *   Utilise des **émojis Unicode** directs (ex: 💾) et PAS de shortcodes (ex: `:floppy_disk:`) pour éviter les problèmes de rendu.
     *   Écris tout le contenu en **Français**.
     *   Reste factuel et technique.
