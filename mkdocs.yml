@@ -15,8 +15,15 @@ copyright: Copyright &copy; 2025 Essensys
 
 nav:
   - Home: index.md
-  - Hardware: hardware.md
+  - Architecture:
+    - Overview: Architecture_Overview.md
+    - Power Budget: Power_Budget.md
+  - Hardware Design:
+    - Design Files: hardware.md
+    - Change Log: Hardware_ChangeLog.md
+    - DFM Recommendations: DFM_Recommendations.md
   - Firmware: firmware.md
+  - Downloads: downloads.md
 
 plugins:
   - search
