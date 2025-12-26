@@ -53,6 +53,7 @@ Mon objectif est de créer un site statique **MkDocs** (thème Material) pour pe
 
 5.  **Configuration (`mkdocs.yml`)**
     *   Génère le fichier `mkdocs.yml` complet configuré avec le thème `material` et la structure de navigation correspondante.
+    *   Ajoute la configuration `markdown_extensions` pour activer `pymdownx.superfences` et le support **Mermaid**.
 
 6.  **Pipeline CI/CD (`.github/workflows/publish.yml`)**
     *   Crée un workflow GitHub Actions pour déployer la documentation sur GitHub Pages.
