@@ -1,50 +1,50 @@
-# Architecture Overview: Essensys SC940D Box
+# Vue d'ensemble de l'Architecture : Boîtier Essensys SC940D
 
-## 1. High-Level Description
-The **SC940D** is a central control unit ("Boitier Pièce de Vie") designed for building automation. It acts as a gateway and actuator controller, managing lighting, blinds, and other AC loads via onboard relays.
+## 1. Description Générale
+Le **SC940D** est une unité centrale de contrôle ("Boîtier Pièce de Vie") conçue pour l'automatisation des bâtiments. Il agit comme une passerelle et un contrôleur d'actionneurs, gérant l'éclairage, les volets roulants et d'autres charges 230V via des relais embarqués.
 
 ![SC940D Schematic](assets/schematic.png)
-> [Download Full Schematic PDF](assets/SC940D_Schematic.pdf)
+> [Télécharger le Schéma Complet (PDF)](assets/SC940D_Schematic.pdf)
 
-## 2. Core Processing & Communication
-### Microcontroller (MCU)
--   **Component**: Microchip **PIC16F946** (8-bit CMOS MCU).
--   **Package**: 64-pin TQFP (`PIC16F946-I/PT`).
--   **Role**: Handles local logic, relay control signals, and interfaces with the communication module. 
-    -   *Note*: The PIC16F946 is an LCD-driver capable MCU, suggesting it might have been chosen for high pin count (64 pins) rather than LCD features, or legacy reasons.
+## 2. Cœur de Traitement & Communication
+### Microcontrôleur (MCU)
+-   **Composant**: Microchip **PIC16F946** (MCU CMOS 8-bit).
+-   **Boîtier**: 64-pin TQFP (`PIC16F946-I/PT`).
+-   **Rôle**: Gère la logique locale, les signaux de contrôle des relais, et s'interface avec le module de communication. 
+    -   *Note*: Le PIC16F946 possède un pilote LCD, mais il a probablement été choisi ici pour son grand nombre d'entrées/sorties (64 broches) ou pour des raisons d'historique composant.
 
 ![MCU Schematic Detail](assets/images/schematic_p2.png)
 
-### Communication Module ("Coeur")
--   **Component**: **SC943-0C** (Custom Module).
--   **Footprint**: `SI943C_REV_A`.
--   **Description**: Identified as a daughterboard module. Based on the "Essential" nature of the system, this likely handles RF communication (e.g., LoRa, Zigbee, or proprietary 868MHz).
--   **Interface**: Connected to the main PCB via headers.
+### Module de Communication ("Cœur")
+-   **Composant**: **SC943-0C** (Module Personnalisé).
+-   **Empreinte**: `SI943C_REV_A`.
+-   **Description**: Identifié comme une carte fille. Compte tenu de la nature du système, ce module gère probablement la communication RF (ex: LoRa, Zigbee, ou protocole propriétaire 868MHz).
+-   **Interface**: Connecté au PCB principal via des connecteurs headers.
 
-## 3. Power Supply Chain
--   **Input Power**: 12V DC (Nominal, supplied via connector).
--   **Main Regulator**: **LMR12010YMK** (Texas Instruments).
-    -   Type: Step-down (Buck) DC-DC Converter.
-    -   Package: SOT-23-6.
-    -   Efficiency: High efficiency (>85%) compared to linear regulators, suitable for minimizing heat in a closed enclosure.
+## 3. Chaîne d'Alimentation
+-   **Entrée**: 12V DC (Nominale, fournie via connecteur).
+-   **Régulateur Principal**: **LMR12010YMK** (Texas Instruments).
+    -   Type: Convertisseur DC-DC Step-down (Buck).
+    -   Boîtier: SOT-23-6.
+    -   Efficacité: Haute efficacité (>85%) comparée aux régulateurs linéaires, idéal pour minimiser l'échauffement dans un boîtier fermé.
 -   **Protection**:
-    -   **VDR1, VR2, VR3**: Varistors (`VDR_S10K_275` equivalent) for transient voltage suppression on mains/inputs.
-    -   **SMF5V0A**: TVS Diodes for ESD/Surge protection on low-voltage signal lines.
+    -   **VDR1, VR2, VR3**: Varistances (équivalent `VDR_S10K_275` pour la suppression des transitoires sur le secteur/entrées.
+    -   **SMF5V0A**: Diodes TVS pour la protection ESD/Surtensions sur les lignes de signal basse tension.
 
-## 4. Actuation & Interfaces
-### Relay Outputs
-The board features a high density of relays for switching loads:
--   **High Power Relays**: **Finder 40.61** Series (16A, SPDT). Used for main loads.
--   **Compact Relays**: **Finder 34.51** Series (6A, Ultra-slim). Used for lower power or space-constrained channels.
--   **Drivers**: **ZXMN3A01F** (N-channel MOSFETs) used to drive relay coils.
+## 4. Actionneurs & Interfaces
+### Sorties Relais
+La carte dispose d'une haute densité de relais pour la commutation de charges :
+-   **Relais Haute Puissance**: Série **Finder 40.61** (16A, SPDT). Utilisés pour les charges principales.
+-   **Relais Compacts**: Série **Finder 34.51** (6A, Ultra-mince). Utilisés pour les canaux de faible puissance ou à espace contraint.
+-   **Pilotes**: **ZXMN3A01F** (MOSFETs Canal-N) utilisés pour piloter les bobines des relais.
 
-### Connectors / Terminals
--   Extensive use of **Phoenix Contact** vertical PCB terminal blocks (`FFKDS` series) for field wiring (Sensors, Bus, Power).
--   **HE10 / IDC**: `IDC2P54_26P` connector implies a 26-pin ribbon cable interface, possibly for programming, expansion, or front-panel connection.
+### Connecteurs / Borniers
+-   Utilisation intensive de borniers PCB verticaux **Phoenix Contact** (série `FFKDS`) pour le câblage terrain (Capteurs, Bus, Alimentation).
+-   **HE10 / IDC**: Le connecteur `IDC2P54_26P` implique une interface par câble nappe 26 broches, possiblement pour la programmation, l'extension ou la connexion en façade.
 
-## 5. PCB Technology
--   **Layers**: 4-Layer Board.
-    -   **L1 (Top)**: Signals & Components.
-    -   **L2 (G1)**: Internal Ground Plane (GND) - Critical for noise immunity.
-    -   **L3 (G2)**: Internal Power Plane (VCC) - Likely split for 12V / 3.3V / 5V.
-    -   **L4 (Bottom)**: Signals & secondary components.
+## 5. Technologie PCB
+-   **Couches**: Carte 4 Couches.
+    -   **L1 (Top)**: Signaux & Composants.
+    -   **L2 (G1)**: Plan de Masse Interne (GND) - Critique pour l'immunité au bruit.
+    -   **L3 (G2)**: Plan d'Alimentation Interne (VCC) - Probablement divisé pour 12V / 3.3V / 5V.
+    -   **L4 (Bottom)**: Signaux & composants secondaires.

@@ -1,26 +1,26 @@
-# Hardware Design
+# Conception Matérielle (Hardware Design)
 
-The hardware design is located in the `SC940D` directory.
+La conception matérielle se trouve dans le répertoire `SC940D`.
 
-## Schematics
+## Schémas Électroniques
 
-The project includes several schematic sheets:
-- **SC940D_Coeur.SchDoc**: Core logic.
-- **SC940D_Borniers.SchDoc**: Connectors.
-- **SC940D_ETOR1.SchDoc**, **SC940D_ETOR2.SchDoc**: I/O configurations.
-- **SC940D_STORRB.SchDoc**, **SC940D_STORRM.SchDoc**: Storage/Memory components.
-- **SC940D_Variateurs.SchDoc**: Variable controls.
+Le projet comprend plusieurs feuilles de schéma :
+- **SC940D_Coeur.SchDoc**: Cœur logique (MCU).
+- **SC940D_Borniers.SchDoc**: Connecteurs.
+- **SC940D_ETOR1.SchDoc**, **SC940D_ETOR2.SchDoc**: Configurations des Entrées/Sorties.
+- **SC940D_STORRB.SchDoc**, **SC940D_STORRM.SchDoc**: Composants de stockage/mémoire (Relais Bistables/Monostables).
+- **SC940D_Variateurs.SchDoc**: Contrôle des variateurs.
 
-## PCB Layout
+## Routage PCB
 
-The PCB layout is defined in `SI940D.PcbDoc`.
+Le routage du circuit imprimé est défini dans `SI940D.PcbDoc`.
 
-## PDF Documentation
+## Documentation PDF
 
-- [Schematic PDF (SC942-0B)](assets/pdfs/Schematic%20PDF_SC942-0B.pdf)
-- [Assembly Drawings (SC942-0B)](assets/pdfs/Assembly%20Drawings_SC942-0B.pdf)
-- [Controller Datasheet (41250f)](assets/pdfs/41250f.pdf)
+- [Schéma PDF (SC942-0B)](assets/pdfs/Schematic%20PDF_SC942-0B.pdf)
+- [Plans d'Assemblage (SC942-0B)](assets/pdfs/Assembly%20Drawings_SC942-0B.pdf)
+- [Datasheet Contrôleur (41250f)](assets/pdfs/41250f.pdf)
 
-## Manufacturing
+## Fabrication
 
-Manufacturing files can be found in `SC940D/Gerbers` and `SC940D/Assembly`.
+Les fichiers de fabrication se trouvent dans `SC940D/Gerbers` et `SC940D/Assembly`.

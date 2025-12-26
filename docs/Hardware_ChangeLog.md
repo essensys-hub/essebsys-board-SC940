@@ -1,17 +1,17 @@
-# Hardware Change Log (SC940D)
+# Historique des Modifications Matérielles (SC940D)
 
-This document tracks the revision history of the SC940D PCB as extracted from design files.
+Ce document retrace l'historique des révisions du PCB SC940D tel qu'extrait des fichiers de conception.
 
-| Release | Description | Criticality |
+| Version | Description | Criticité |
 | :--- | :--- | :--- |
-| **Release 16.0** | **Current Version**. Added Pad/Via hole size tolerance values. | **Caution** |
-| **Release 15.1** | Support for Multi-line PCB Text added. Note: verify text rendering on older CAM software. | Caution |
-| **Release 15.0** | Support for separate solder masks for top & bottom of pads added. | Caution |
+| **Release 16.0** | **Version Actuelle**. Ajout des valeurs de tolérance pour la taille des trous de Pads/Vias. | **Caution** |
+| **Release 15.1** | Support du texte PCB multi-lignes ajouté. Note : vérifier le rendu du texte sur les anciens logiciels CAM. | Caution |
+| **Release 15.0** | Support des masques de soudure séparés pour le dessus et le dessous des pads ajouté. | Caution |
 
-## Legacy / Unverified Changes
+## Modifications Anciennes / Non Vérifiées
 > [!NOTE]
-> Older revisions (Pre-15.0) are not detailed in the current export. Please refer to archive files in `SC940D/_Archives` if available.
+> Les anciennes révisions (Pré-15.0) ne sont pas détaillées dans l'export actuel. Veuillez vous référer aux archives dans `SC940D/_Archives` si disponibles.
 
-## Known Issues (Current Design)
--   **Documentation Gap**: The "Coeur" module (`SC943`) lacks a detailed schematic in the main project tree.
--   **Designator Jump**: Component designators skip values (e.g., Relays K1-K17, then gap?), typical in evolved designs.
+## Problèmes Connus (Design Actuel)
+-   **Manque de Documentation**: Le module "Cœur" (`SC943`) manque de schéma détaillé dans l'arborescence principale du projet.
+-   **Saut de Désignateurs**: Les désignateurs des composants sautent des valeurs (ex: Relais K1-K17, puis un trou ?), typique des conceptions ayant évolué.

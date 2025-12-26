@@ -20,15 +20,15 @@ Pour vous donner un aperçu rapide, voici les éléments clés du circuit (Micro
 
 ### 🏛️ Architecture
 Comprenez le fonctionnement interne de la carte, son microcontrôleur PIC16F946 et son étage de puissance.
-[:arrow_right: Architecture Overview](Architecture_Overview.md)
+[➡️ Architecture Overview](Architecture_Overview.md)
 
 ### 🔌 Hardware
 Détails techniques, recommandations de fabrication (DFM) et gestion de l'alimentation.
-[:arrow_right: Spécifications Hardware](Architecture_Overview.md)
+[➡️ Spécifications Hardware](hardware.md)
 
 ### 💾 Téléchargements
 Accédez aux fichiers sources pour la production : schémas PDF, modèles 3D STEP et fichiers de fabrication Gerber.
-[:arrow_right: Espace de téléchargement](downloads.md)
+[➡️ Espace de téléchargement](downloads.md)
 
 ## Structure du dépôt
 Le code source et les fichiers de conception sont organisés comme suit :
