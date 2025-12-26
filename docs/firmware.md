@@ -87,7 +87,7 @@ La carte **SC940D** agit comme un module d'Entrée/Sortie esclave générique, p
 
 ```mermaid
 graph TD
-    subgraph Interrupt[Interruption (ISR)]
+    subgraph Interrupt[Interruption - ISR]
         ISR(SSP_Handler) --> Recv[Réception Octet]
         Recv --> Buffer{"Buffer Plein ?"}
         Buffer -- Non --> Store[Stockage RXBuffer]
